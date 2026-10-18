@@ -1,0 +1,9 @@
+# build output
+dist/
+build/
+*.spec.bak
+__pycache__/
+*.pyc
+
+# personal region overrides created by "Edit region mapping…"
+region_map.json
