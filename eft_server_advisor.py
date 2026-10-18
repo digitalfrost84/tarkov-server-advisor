@@ -570,8 +570,9 @@ class App(tk.Tk):
             tree.column(cid, width=self.px(w), anchor="w" if cid in ("name", "dcs", "ips", "map", "addr") else "center")
         vs = ttk.Scrollbar(frame, orient="vertical", command=tree.yview)
         tree.configure(yscrollcommand=vs.set)
-        tree.pack(side="left", fill="both", expand=True)
+        # pack the scrollbar first so a wide tree can't squeeze it off-screen
         vs.pack(side="right", fill="y")
+        tree.pack(side="left", fill="both", expand=True)
         tree.tag_configure("bad", background="#f6c6c6")
         tree.tag_configure("warn", background="#fbe8b5")
         tree.tag_configure("good", background="#cdeccd")
